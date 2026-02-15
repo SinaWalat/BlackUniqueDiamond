@@ -28,8 +28,8 @@ export function Hero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
       </div>
 
 
@@ -48,13 +48,13 @@ export function Hero() {
           {/* Main Heading */}
           <h1 className="mb-6">
             <span
-              className={`block text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight transition-all duration-700 delay-100 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              className={`block text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tight transition-all duration-700 delay-100 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
             >
               BLACK UNIQUE
             </span>
             <span
-              className={`block text-5xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[#f48c21] to-[#fdce07] bg-clip-text text-transparent tracking-tight transition-all duration-700 delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              className={`block text-4xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-[#f48c21] to-[#fdce07] bg-clip-text text-transparent tracking-tight transition-all duration-700 delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
             >
               DIAMOND
@@ -63,7 +63,7 @@ export function Hero() {
 
           {/* Tagline */}
           <p
-            className={`text-xl md:text-2xl text-white/70 font-light max-w-2xl mb-10 leading-relaxed transition-all duration-700 delay-300 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            className={`text-lg md:text-xl text-white/70 font-light max-w-2xl mb-10 leading-relaxed transition-all duration-700 delay-300 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
           >
             Integrated petroleum products producer and service provider, delivering excellence across the energy value chain.
@@ -102,7 +102,7 @@ export function Hero() {
               >
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
                   <stat.icon className="w-5 h-5 text-[#f48c21] group-hover:scale-110 transition-transform" />
-                  <span className="text-2xl md:text-3xl font-bold text-white">{stat.value}</span>
+                  <span className="text-xl md:text-2xl font-bold text-white">{stat.value}</span>
                 </div>
                 <span className="text-sm text-white/50">{stat.label}</span>
               </div>

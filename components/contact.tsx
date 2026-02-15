@@ -43,8 +43,8 @@ export function Contact() {
                         <div className="space-y-8">
                             {[
                                 { icon: Mail, title: "Email Us", content: "info@blackuniquediamond.com" },
-                                { icon: Phone, title: "Call Us", content: "+1 (555) 123-4567" },
-                                { icon: MapPin, title: "Visit Us", content: "123 Refinery Road, Industrial District" }
+                                { icon: Phone, title: "Call Us", content: "+964 750 459 2199" },
+                                { icon: MapPin, title: "Visit Us", content: "No 48, Vital Village, Erbil, Iraq" }
                             ].map((item) => (
                                 <div key={item.title} className="flex items-center gap-6 group cursor-pointer">
                                     <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center shadow-lg group-hover:bg-[#f48c21] transition-colors duration-300">
