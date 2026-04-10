@@ -25,16 +25,16 @@ export function Quality() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="quality" className="relative py-24 md:py-32 bg-white overflow-hidden">
+    <section ref={sectionRef} id="quality" className="relative py-24 md:py-32 bg-black text-white overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
 
         {/* Header - Consistent with other sections */}
         <div className={`mb-16 text-center max-w-3xl mx-auto transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <span className="text-gray-900 text-sm font-bold tracking-[0.25em] uppercase">Our Standards</span>
-          <h2 className="mt-6 text-5xl md:text-7xl font-black text-gray-900 leading-[0.9] tracking-tight">
+          <span className="text-white/60 text-sm font-bold tracking-[0.25em] uppercase">Our Standards</span>
+          <h2 className="mt-6 text-5xl md:text-7xl font-black text-white leading-[0.9] tracking-tight">
             Quality & <span className="bg-gradient-to-r from-[#f48c21] to-[#fdce07] bg-clip-text text-transparent">Compliance</span>
           </h2>
-          <p className="mt-6 text-gray-500 text-lg leading-relaxed">
+          <p className="mt-6 text-white/40 text-lg leading-relaxed">
             Rigorous testing, international certifications, and zero-compromise safety protocols define our operations.
           </p>
         </div>
@@ -43,7 +43,7 @@ export function Quality() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
           {/* Card 1: Lab Analysis (Data Focus) */}
-          <div className={`group relative h-[500px] rounded-[2.5rem] bg-black overflow-hidden transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className={`group relative h-[500px] rounded-[2.5rem] bg-black border border-white/10 overflow-hidden transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
             <div className="absolute -top-20 -right-20 w-[300px] h-[300px] bg-[#f48c21]/15 rounded-full blur-[80px] pointer-events-none group-hover:bg-[#f48c21]/25 transition-colors duration-500" />
 
@@ -53,7 +53,7 @@ export function Quality() {
               </div>
 
               <h3 className="text-3xl font-black text-white mb-2">Lab Analysis</h3>
-              <p className="text-gray-400 text-sm mb-8">Real-time quality monitoring parameters.</p>
+              <p className="text-white/40 text-sm mb-8">Real-time quality monitoring parameters.</p>
 
               <div className="mt-auto space-y-4">
                 {/* Fake Data Bars */}
@@ -63,7 +63,7 @@ export function Quality() {
                   { label: "Octane", val: "95+", width: "85%" }
                 ].map((item, i) => (
                   <div key={i} className="group/bar">
-                    <div className="flex justify-between text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">
+                    <div className="flex justify-between text-xs font-bold text-white/40 mb-2 uppercase tracking-wider">
                       <span>{item.label}</span>
                       <span className="text-white">{item.val}</span>
                     </div>
@@ -80,7 +80,7 @@ export function Quality() {
           </div>
 
           {/* Card 2: Certifications (Badge Focus) */}
-          <div className={`group relative h-[500px] rounded-[2.5rem] bg-black overflow-hidden transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className={`group relative h-[500px] rounded-[2.5rem] bg-black border border-white/10 overflow-hidden transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
             {/* Center Glow */}
@@ -102,7 +102,7 @@ export function Quality() {
 
               <div className="mt-auto grid grid-cols-2 gap-3 w-full">
                 {['ISO 14001', 'ISO 45001'].map((iso) => (
-                  <div key={iso} className="p-3 rounded-xl bg-white/5 border border-white/5 text-gray-300 font-bold text-sm hover:border-[#f48c21]/50 hover:bg-white/10 transition-all duration-300 cursor-default">
+                  <div key={iso} className="p-3 rounded-xl bg-white/5 border border-white/10 text-white/60 font-bold text-sm hover:border-[#f48c21]/50 hover:bg-white/10 transition-all duration-300 cursor-default">
                     {iso}
                   </div>
                 ))}
@@ -111,7 +111,7 @@ export function Quality() {
           </div>
 
           {/* Card 3: HSE (Icon Focus) */}
-          <div className={`group relative h-[500px] rounded-[2.5rem] bg-black overflow-hidden transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className={`group relative h-[500px] rounded-[2.5rem] bg-black border border-white/10 overflow-hidden transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
             <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] bg-[#f48c21]/15 rounded-full blur-[80px] pointer-events-none group-hover:bg-[#f48c21]/25 transition-colors duration-500" />
 
@@ -121,7 +121,7 @@ export function Quality() {
               </div>
 
               <h3 className="text-3xl font-black text-white mb-2">Safety First</h3>
-              <p className="text-gray-400 text-sm mb-8">Comprehensive HSE management systems.</p>
+              <p className="text-white/40 text-sm mb-8">Comprehensive HSE management systems.</p>
 
               <div className="mt-auto space-y-4">
                 {[
@@ -129,9 +129,9 @@ export function Quality() {
                   { icon: Leaf, text: "Zero Emissions Goal" },
                   { icon: CheckCircle, text: "Full Compliance" }
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-[#f48c21]/50 hover:bg-white/10 transition-all duration-300 cursor-default">
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#f48c21]/50 hover:bg-white/10 transition-all duration-300 cursor-default">
                     <item.icon className="w-5 h-5 text-[#f48c21]" />
-                    <span className="text-gray-200 font-medium">{item.text}</span>
+                    <span className="text-white/80 font-medium">{item.text}</span>
                   </div>
                 ))}
               </div>

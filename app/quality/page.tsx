@@ -19,16 +19,6 @@ export default function QualityPage() {
 
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="/images/dscf4104.jpeg"
-                        alt="Facility background"
-                        fill
-                        className="object-cover opacity-20 blur-sm"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
-                </div>
-
                 <div className="container mx-auto px-6 relative z-10">
                     <div className={`max-w-4xl transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                         <div className="flex items-center gap-3 mb-6">
@@ -50,10 +40,10 @@ export default function QualityPage() {
             <section className="pb-32">
                 <div className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-16 mb-32 items-center">
-                        <div className="p-10 rounded-[3rem] bg-[#0a0a0a] border border-[#f48c21]/20 relative overflow-hidden group">
+                        <div className="p-10 rounded-[3rem] bg-[#0a0a0a] border border-white/10 relative overflow-hidden group">
                             <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
                                 <Image
-                                    src="/images/lab.jpeg"
+                                    src="/images/18.jpeg"
                                     alt="Technical laboratory"
                                     fill
                                     className="object-cover"
@@ -74,7 +64,7 @@ export default function QualityPage() {
                                 { icon: Thermometer, text: "International Standards Compliance" },
                                 { icon: HeartPulse, text: "Operational Reliability" }
                             ].map((item, i) => (
-                                <div key={i} className="flex items-center gap-6 p-6 rounded-[2rem] bg-white/[0.02] border border-white/5 group hover:border-[#f48c21]/20 transition-all">
+                                <div key={i} className="flex items-center gap-6 p-6 rounded-[2rem] bg-white/[0.02] border border-white/10 group hover:border-[#f48c21]/20 transition-all">
                                     <div className="w-12 h-12 rounded-xl bg-[#f48c21]/10 flex items-center justify-center group-hover:bg-[#f48c21] group-hover:text-black transition-all">
                                         <item.icon className="w-6 h-6" />
                                     </div>
@@ -88,7 +78,7 @@ export default function QualityPage() {
                     <div className="mb-32">
                         <div className="flex items-center gap-4 mb-16">
                             <h2 className="text-4xl md:text-5xl font-black">Quality Assurance & Compliance</h2>
-                            <div className="flex-1 h-px bg-gradient-to-r from-[#f48c21]/30 to-transparent" />
+                            <div className="flex-1 h-px bg-gradient-to-r from-[#f48c21] to-[#fdce07]" />
                         </div>
 
                         <p className="text-xl text-white/70 max-w-4xl mb-12 leading-relaxed">
@@ -103,7 +93,7 @@ export default function QualityPage() {
                                 { label: "Octane/Cetane Numbers", icon: Zap },
                                 { label: "Distillation Characteristics", icon: Settings }
                             ].map((spec, i) => (
-                                <div key={i} className="p-8 rounded-[2rem] bg-[#0a0a0a] border border-white/5 flex items-center justify-between group hover:bg-gradient-to-br hover:from-[#f48c21]/5 transition-all">
+                                <div key={i} className="p-8 rounded-[2rem] bg-[#0a0a0a] border border-white/10 flex items-center justify-between group hover:bg-gradient-to-br hover:from-[#f48c21]/5 transition-all">
                                     <div className="flex items-center gap-4">
                                         <spec.icon className="w-5 h-5 text-[#f48c21]" />
                                         <span className="text-lg text-white/80">{spec.label}</span>
@@ -111,20 +101,18 @@ export default function QualityPage() {
                                     <CheckCircle className="w-5 h-5 text-[#f48c21] opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </div>
                             ))}
-                            <div className="p-8 rounded-[2rem] bg-gradient-to-br from-[#f48c21]/10 to-transparent border border-[#f48c21]/20 flex flex-col justify-center">
-                                <div className="flex items-center gap-4 mb-2">
-                                    <FileText className="w-6 h-6 text-[#f48c21]" />
-                                    <h4 className="font-bold text-white">Product Certification</h4>
+                            <div className="p-8 rounded-[2rem] bg-gradient-to-br from-[#f48c21]/5 to-transparent border border-white/10 flex items-center justify-between group hover:from-[#f48c21]/10 transition-all">
+                                <div className="flex items-center gap-4">
+                                    <FileText className="w-5 h-5 text-[#f48c21]" />
+                                    <span className="text-lg text-white/80 font-bold">Product Certification</span>
                                 </div>
-                                <p className="text-sm text-white/60 leading-relaxed">
-                                    Available upon request through in-house and independent laboratories.
-                                </p>
+                                <CheckCircle className="w-5 h-5 text-[#f48c21]" />
                             </div>
                         </div>
                     </div>
 
                     {/* HSE Section */}
-                    <div className="relative p-12 md:p-20 rounded-[4rem] bg-[#0a0a0a] border border-white/5 overflow-hidden">
+                    <div className="relative p-12 md:p-20 rounded-[4rem] bg-[#0a0a0a] border border-white/10 overflow-hidden">
                         <div className="absolute top-0 right-0 p-12 opacity-10">
                             <Leaf className="w-64 h-64 text-[#f48c21]" />
                         </div>

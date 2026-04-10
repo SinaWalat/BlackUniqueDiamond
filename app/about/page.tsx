@@ -5,6 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { Target, Eye, Zap, Shield, ChevronRight } from "lucide-react"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 export default function AboutPage() {
     const [isVisible, setIsVisible] = useState(false)
@@ -21,12 +22,12 @@ export default function AboutPage() {
             <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/refinery.jpeg"
+                        src="/images/Cover.jpeg"
                         alt="Refinery background"
                         fill
                         className="object-cover opacity-20 blur-sm"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10">
@@ -35,9 +36,9 @@ export default function AboutPage() {
                             <div className="w-12 h-0.5 bg-[#f48c21]" />
                             <span className="text-[#f48c21] text-sm font-bold tracking-[0.2em] uppercase">About Us</span>
                         </div>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight text-white">
                             Corporate <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">Overview</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f48c21] to-[#fdce07]">Overview</span>
                         </h1>
                     </div>
                 </div>
@@ -57,7 +58,7 @@ export default function AboutPage() {
                         </div>
                         <div className="relative h-[500px] rounded-[3rem] overflow-hidden border border-white/10 group">
                             <Image
-                                src="/images/dscf4091.jpeg"
+                                src="/images/Cover.jpeg"
                                 alt="Operational assets"
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -68,37 +69,71 @@ export default function AboutPage() {
 
                     {/* Mission & Vision */}
                     <div className="grid md:grid-cols-2 gap-8 mb-32">
-                        {/* Mission */}
-                        <div className="group p-10 rounded-[2.5rem] bg-[#0a0a0a] border border-[#f48c21]/30 relative overflow-hidden transition-all duration-500 shadow-[0_0_50px_-10px_rgba(244,140,33,0.1)]">
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#f48c21]/10 via-transparent to-transparent opacity-100" />
-                            <div className="relative z-10">
-                                <div className="flex items-start justify-between mb-8">
-                                    <div className="w-16 h-16 rounded-2xl bg-[#f48c21] flex items-center justify-center">
-                                        <Target className="w-8 h-8 text-black" />
+                        {/* Vision Card */}
+                        <div className={`group relative rounded-[2.5rem] min-h-[380px] md:min-h-[440px] flex flex-col justify-between transition-all duration-1000 delay-300 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+                            <GlowingEffect
+                                spread={40}
+                                glow={true}
+                                disabled={false}
+                                proximity={150}
+                                inactiveZone={0.01}
+                                borderWidth={3}
+                                variant="orange"
+                            />
+                            <div className="relative h-full flex flex-col justify-between p-10 md:p-12 bg-black border border-white/10 rounded-[inherit] overflow-hidden z-10">
+                                <div className={`absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-[#f48c21]/8 to-transparent rounded-full blur-3xl transition-opacity duration-1000 delay-700 ${isVisible ? "opacity-60" : "opacity-0"}`} />
+
+                                <div className="relative z-10 flex flex-col justify-between h-full text-left">
+                                    <div>
+                                        <h3 className={`text-4xl md:text-5xl font-black leading-tight mb-5 transition-transform duration-1000 delay-500 ${isVisible ? "translate-y-0" : "translate-y-4"}`}>
+                                            <span className="bg-gradient-to-r from-[#f48c21] to-[#fdce07] bg-clip-text text-transparent">Vision</span>
+                                        </h3>
+                                        <p className={`text-white/75 text-lg leading-relaxed max-w-sm transition-opacity duration-1000 delay-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+                                            Become a trusted regional producer and international partner, setting the standard for quality and innovation.
+                                        </p>
                                     </div>
-                                    <span className="text-5xl font-black text-[#f48c21]/20 font-serif">01</span>
+
+                                    <div className="flex items-end justify-between mt-10">
+                                        <span className={`text-white/40 text-sm transition-opacity duration-1000 delay-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}>Black Unique — Product Philosophy</span>
+                                        <div className={`w-12 h-12 rounded-full border border-white/10 flex items-center justify-center transition-all duration-1000 delay-[1200ms] ${isVisible ? "scale-100 opacity-100" : "scale-50 opacity-0"}`}>
+                                            <Eye className="w-5 h-5 text-[#f48c21]" />
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-3xl font-bold mb-4">Mission</h3>
-                                <p className="text-gray-300 text-lg leading-relaxed">
-                                    To produce and supply high-quality refined and blended fuel products that meet international standards while maintaining operational excellence and commercial integrity.
-                                </p>
                             </div>
                         </div>
 
-                        {/* Vision */}
-                        <div className="group p-10 rounded-[2.5rem] bg-[#0a0a0a] border border-[#f48c21]/30 relative overflow-hidden transition-all duration-500 shadow-[0_0_50px_-10px_rgba(244,140,33,0.1)]">
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#f48c21]/10 via-transparent to-transparent opacity-100" />
-                            <div className="relative z-10">
-                                <div className="flex items-start justify-between mb-8">
-                                    <div className="w-16 h-16 rounded-2xl bg-[#f48c21] flex items-center justify-center">
-                                        <Eye className="w-8 h-8 text-black" />
+                        {/* Mission Card */}
+                        <div className={`group relative rounded-[2.5rem] min-h-[380px] md:min-h-[440px] flex flex-col justify-between transition-all duration-1000 delay-500 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+                            <GlowingEffect
+                                spread={40}
+                                glow={true}
+                                disabled={false}
+                                proximity={150}
+                                inactiveZone={0.01}
+                                borderWidth={3}
+                                variant="orange"
+                            />
+                            <div className="relative h-full flex flex-col justify-between p-10 md:p-12 bg-black border border-white/10 rounded-[inherit] overflow-hidden z-10">
+                                <div className={`absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-[#f48c21]/8 to-transparent rounded-full blur-3xl transition-opacity duration-1000 delay-1000 ${isVisible ? "opacity-60" : "opacity-0"}`} />
+
+                                <div className="relative z-10 flex flex-col justify-between h-full text-left">
+                                    <div>
+                                        <h3 className={`text-4xl md:text-5xl font-black leading-tight mb-5 transition-transform duration-1000 delay-700 ${isVisible ? "translate-y-0" : "translate-y-4"}`}>
+                                            <span className="bg-gradient-to-r from-[#f48c21] to-[#fdce07] bg-clip-text text-transparent">Mission</span>
+                                        </h3>
+                                        <p className={`text-white/55 text-lg leading-relaxed max-w-sm transition-opacity duration-1000 delay-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+                                            Produce high-quality refined fuel products meeting international standards while maintaining environmental responsibility.
+                                        </p>
                                     </div>
-                                    <span className="text-5xl font-black text-[#f48c21]/20 font-serif">02</span>
+
+                                    <div className="flex items-end justify-between mt-10">
+                                        <span className={`text-white/40 text-sm font-semibold tracking-wide transition-opacity duration-1000 delay-[1200ms] ${isVisible ? "opacity-100" : "opacity-0"}`}>Quality. Innovation. Integrity.</span>
+                                        <div className={`w-12 h-12 rounded-full border border-white/10 flex items-center justify-center transition-all duration-1000 delay-[1400ms] ${isVisible ? "scale-100 opacity-100" : "scale-50 opacity-0"}`}>
+                                            <Target className="w-5 h-5 text-[#f48c21]" />
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-3xl font-bold mb-4">Vision</h3>
-                                <p className="text-gray-300 text-lg leading-relaxed">
-                                    To become a trusted regional producer and international partner in the refined petroleum products value chain.
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -108,7 +143,7 @@ export default function AboutPage() {
                         <div>
                             <div className="flex items-center gap-4 mb-12">
                                 <h2 className="text-4xl md:text-5xl font-black">Competitive Advantages</h2>
-                                <div className="flex-1 h-px bg-gradient-to-r from-[#f48c21]/30 to-transparent" />
+                                <div className="flex-1 h-px bg-gradient-to-r from-[#f48c21] to-[#fdce07]" />
                             </div>
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {[
@@ -118,7 +153,7 @@ export default function AboutPage() {
                                     "Advanced technical and formulation expertise",
                                     "Strong partnerships with international service providers"
                                 ].map((item, i) => (
-                                    <div key={i} className="p-6 rounded-3xl bg-[#0a0a0a] border border-white/5 hover:border-[#f48c21]/30 transition-all duration-300 flex items-start gap-4">
+                                    <div key={i} className="p-6 rounded-3xl bg-[#0a0a0a] border border-white/10 hover:border-[#f48c21]/30 transition-all duration-300 flex items-start gap-4">
                                         <div className="w-8 h-8 rounded-lg bg-[#f48c21]/10 flex items-center justify-center flex-shrink-0 mt-1">
                                             <Zap className="w-4 h-4 text-[#f48c21]" />
                                         </div>
@@ -131,7 +166,7 @@ export default function AboutPage() {
                         <div>
                             <div className="flex items-center gap-4 mb-12">
                                 <h3 className="text-4xl md:text-5xl font-black">Key Strengths</h3>
-                                <div className="flex-1 h-px bg-gradient-to-r from-[#f48c21]/30 to-transparent" />
+                                <div className="flex-1 h-px bg-gradient-to-r from-[#f48c21] to-[#fdce07]" />
                             </div>
                             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 {[
@@ -140,7 +175,7 @@ export default function AboutPage() {
                                     "Technical expertise and quality-driven operations",
                                     "Reliable regional and cross-border supply execution"
                                 ].map((item, i) => (
-                                    <div key={i} className="p-8 rounded-[2rem] bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 hover:border-[#f48c21]/20 transition-all duration-500">
+                                    <div key={i} className="p-8 rounded-[2rem] bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#f48c21]/20 transition-all duration-500">
                                         <Shield className="w-10 h-10 text-[#f48c21] mb-6" />
                                         <p className="text-lg font-medium text-white/80">{item}</p>
                                     </div>

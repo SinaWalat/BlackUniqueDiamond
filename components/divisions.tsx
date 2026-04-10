@@ -60,20 +60,20 @@ export function Divisions() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="divisions" className="relative py-24 md:py-32 bg-white overflow-hidden">
+    <section ref={sectionRef} id="divisions" className="relative py-24 md:py-32 bg-black text-white overflow-hidden">
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className={`mb-16 md:mb-24 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
             <div>
-              <span className="text-gray-900 text-sm font-bold tracking-[0.25em] uppercase pl-1">Our Capabilities</span>
-              <h2 className="mt-6 text-5xl md:text-7xl font-black text-gray-900 leading-[0.9] tracking-tight">
+              <span className="text-white/60 text-sm font-bold tracking-[0.25em] uppercase pl-1">Our Capabilities</span>
+              <h2 className="mt-6 text-5xl md:text-7xl font-black text-white leading-[0.9] tracking-tight">
                 Business<br />
                 <span className="bg-gradient-to-r from-[#f48c21] to-[#fdce07] bg-clip-text text-transparent">Divisions</span>
               </h2>
             </div>
-            <p className="text-gray-400 text-lg max-w-md leading-relaxed">
+            <p className="text-white/40 text-lg max-w-md leading-relaxed">
               Integrated capabilities across commercial, logistics, and R&D delivering excellence at every step.
             </p>
           </div>
@@ -96,13 +96,13 @@ export function Divisions() {
                   {/* Optional Background Image */}
                   {(division as any).image && (
                     <>
-                      <Image
-                        src={(division as any).image}
-                        alt={division.title}
-                        fill
-                        className="object-cover opacity-60"
-                      />
-                      <div className="absolute inset-0 bg-black/40" />
+                        <Image
+                          src={(division as any).image}
+                          alt={division.title}
+                          fill
+                          className="object-cover opacity-80 transition-opacity duration-700 group-hover:opacity-100"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     </>
                   )}
                   {/* Grain/Texture Overlay */}
@@ -154,7 +154,7 @@ export function Divisions() {
                     {/* Vertical Title for Inactive State (Desktop only) */}
                     <div className={`hidden lg:block transition-all duration-500 absolute bottom-10 left-10 origin-bottom-left -rotate-90 translate-x-12 ${!isActive ? "opacity-100 translate-y-0 delay-300" : "opacity-0 translate-y-4"
                       }`}>
-                      <span className="text-4xl font-black text-gray-700 whitespace-nowrap tracking-wide group-hover:text-white transition-colors duration-500">
+                      <span className="text-4xl font-black text-white/10 whitespace-nowrap tracking-wide group-hover:text-white transition-colors duration-500">
                         {division.shortTitle}
                       </span>
                     </div>

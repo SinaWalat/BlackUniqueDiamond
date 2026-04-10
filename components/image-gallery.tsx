@@ -38,7 +38,7 @@ const row2Images = [
 
 export function ImageGallery() {
     return (
-        <section className="relative py-16 bg-white overflow-hidden">
+        <section className="relative py-16 bg-black overflow-hidden">
             {/* Row 1 - Moves Left Automatically */}
             <div className="flex gap-4 mb-4 animate-marquee-left hover:[animation-play-state:paused]">
                 {[...row1Images, ...row1Images, ...row1Images].map((src, i) => (

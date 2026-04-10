@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   description: 'Integrated petroleum products producer and service provider in Kurdistan Region of Iraq',
   generator: 'v0.app',
   icons: {
-    icon: '/icon.svg',
-    apple: '/icon.svg',
+    icon: '/Logo3.svg',
+    apple: '/Logo3.svg',
   },
 }
 

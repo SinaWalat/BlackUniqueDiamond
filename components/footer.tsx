@@ -2,14 +2,8 @@
 
 import { ArrowUp } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Divisions", href: "#divisions" },
-  { label: "Quality", href: "#quality" },
-  { label: "Contact", href: "#contact" },
-]
 
 export function Footer() {
   const scrollToTop = () => {
@@ -17,60 +11,57 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative bg-[#f5f5f5] pt-20 pb-8 overflow-hidden">
-      {/* Top gradient line */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#f48c21] to-transparent" />
+    <footer className="relative bg-black pt-16 pb-8 overflow-hidden text-white border-t border-white/5">
+      {/* Top subtle glow line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 max-w-4xl h-px bg-gradient-to-r from-transparent via-[#f48c21] to-transparent opacity-40" />
 
       <div className="container mx-auto px-6">
+        
         {/* Main Footer Content */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 pb-12 border-b border-gray-200">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 pb-10 border-b border-white/5">
+          
           {/* Logo */}
-          <div className="flex items-center gap-4">
-            <div className="relative w-64 h-64">
+          <div className="flex items-center justify-center lg:justify-start w-full lg:w-1/4">
+            <Link href="/" className="relative h-20 w-64 block cursor-pointer transition-transform hover:scale-[1.02] active:scale-[0.98]">
               <Image
-                src="/Logo2.svg"
-                alt="Black Diamond"
+                src="/Logo1.svg"
+                alt="Black Unique Diamond"
                 fill
-                className="object-contain"
+                className="object-contain object-center lg:object-left"
               />
-            </div>
-
+            </Link>
           </div>
 
-          {/* Navigation */}
-          <nav className="flex flex-wrap justify-center gap-8">
-            {false && navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-gray-400 hover:text-gray-900 transition-colors duration-300 relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#f48c21] to-[#fdce07] group-hover:w-full transition-all duration-300" />
-              </a>
-            ))}
-          </nav>
+          {/* Company Info */}
+          <div className="flex justify-center w-full lg:w-2/4">
+            <p className="text-white/40 text-[13px] leading-relaxed max-w-lg text-center font-medium tracking-wide">
+              An integrated petroleum products producer and service provider, delivering excellence across the energy value chain with uncompromised quality and compliance.
+            </p>
+          </div>
 
           {/* Back to Top */}
-          <button
-            onClick={scrollToTop}
-            className="group flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 text-gray-400 hover:border-[#f48c21] hover:text-[#f48c21] transition-all duration-300 cursor-pointer"
-          >
-            <span className="text-sm font-medium">Back to Top</span>
-            <ArrowUp className="w-4 h-4 transition-transform" />
-          </button>
+          <div className="flex justify-center lg:justify-end w-full lg:w-1/4">
+            <button
+              onClick={scrollToTop}
+              className="group flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:border-[#f48c21]/50 hover:text-white transition-all duration-300 cursor-pointer"
+            >
+              <span className="text-xs font-bold uppercase tracking-widest">Back to Top</span>
+              <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center group-hover:-translate-y-0.5 transition-transform">
+                 <ArrowUp className="w-3 h-3 text-[#f48c21]" />
+              </div>
+            </button>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8">
-          <p className="text-gray-400 text-sm">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-center md:text-left">
+          <p className="text-white/20 text-xs tracking-widest uppercase">
             © {new Date().getFullYear()} Black Unique Diamond. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm">
-            Kurdistan Region of Iraq
-          </p>
+          <div className="flex items-center gap-6 text-white/20 text-xs tracking-widest uppercase">
+            <p>Kurdistan Region of Iraq</p>
+          </div>
         </div>
-
 
       </div>
     </footer>

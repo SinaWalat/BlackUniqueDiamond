@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { Droplet, Flame, FlaskConical, Fuel, Beaker, Atom, Cylinder, ArrowRight } from "lucide-react"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 // Unified brand color palette - no rainbow
 const products = [
@@ -83,11 +84,10 @@ export function Products() {
     }, [])
 
     return (
-        <section ref={sectionRef} id="products" className="relative bg-white overflow-hidden py-24 md:py-32">
+        <section ref={sectionRef} id="products" className="relative bg-black text-white overflow-hidden py-24 md:py-32">
 
-            {/* Background elements */}
-            <div className="absolute right-0 top-0 w-1/3 h-full bg-gray-50/50 hidden lg:block" />
-            <div className="absolute top-20 right-20 w-96 h-96 bg-[#f48c21]/5 rounded-full blur-[100px] pointer-events-none" />
+            {/* Background elements - Clean Black */}
+            <div className="absolute top-20 right-20 w-96 h-96 bg-[#f48c21]/2 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
 
@@ -95,22 +95,22 @@ export function Products() {
                 <div className={`mb-20 md:mb-32 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
                         <div>
-                            <span className="text-gray-900 text-sm font-bold tracking-[0.25em] uppercase pl-1">What We Refine</span>
+                            <span className="text-white/60 text-sm font-bold tracking-[0.25em] uppercase pl-1">What We Refine</span>
                             <h2 className="mt-6 text-5xl md:text-7xl font-black leading-[0.9] tracking-tight">
-                                <span className="text-gray-900">Premium</span><br />
+                                <span className="text-white">Premium</span><br />
                                 <span className="bg-gradient-to-r from-[#f48c21] to-[#fdce07] bg-clip-text text-transparent">Products</span>
                             </h2>
                         </div>
 
                         {/* Stats - Tech style */}
                         <div className="flex gap-12">
-                            <div className="relative pl-6 border-l-2 border-gray-100">
-                                <p className="text-5xl font-black text-gray-900">7</p>
-                                <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mt-2">Core Products</p>
+                            <div className="relative pl-6 border-l-2 border-white/10">
+                                <p className="text-5xl font-black text-white">7</p>
+                                <p className="text-white/40 text-xs font-bold uppercase tracking-wider mt-2">Core Products</p>
                             </div>
-                            <div className="relative pl-6 border-l-2 border-gray-100">
-                                <p className="text-5xl font-black text-gray-900">500K</p>
-                                <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mt-2">Barrels/Month</p>
+                            <div className="relative pl-6 border-l-2 border-white/10">
+                                <p className="text-5xl font-black text-white">500K</p>
+                                <p className="text-white/40 text-xs font-bold uppercase tracking-wider mt-2">Barrels/Month</p>
                             </div>
                         </div>
                     </div>
@@ -125,12 +125,12 @@ export function Products() {
                                 <div
                                     key={product.name}
                                     onMouseEnter={() => setActiveIndex(i)}
-                                    className="group relative cursor-pointer py-6 border-b border-gray-100 last:border-0"
+                                    className="group relative cursor-pointer py-6 border-b border-white/10 last:border-0"
                                 >
                                     <div className="flex items-center justify-between">
                                         <h3 className={`text-4xl font-bold transition-all duration-500 ${activeIndex === i
-                                            ? "text-gray-900 translate-x-4"
-                                            : "text-gray-300 group-hover:text-gray-400"
+                                            ? "text-white translate-x-4"
+                                            : "text-white/20 group-hover:text-white/40"
                                             }`}>
                                             {product.name}
                                         </h3>
@@ -149,15 +149,25 @@ export function Products() {
 
                     {/* Right: Sticky Preview Card */}
                     <div className={`w-7/12 relative transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}>
-                        <div className="sticky top-32 h-[600px]">
-                            <div className="relative w-full h-full rounded-[2rem] overflow-hidden bg-black shadow-2xl">
+                        <div className="sticky top-32 h-[600px] group rounded-[2.5rem]">
+                            <GlowingEffect
+                                spread={40}
+                                glow={true}
+                                disabled={false}
+                                proximity={150}
+                                inactiveZone={0.01}
+                                borderWidth={3}
+                                variant="orange"
+                                autoplay={true}
+                            />
+                            <div className="relative w-full h-full rounded-[inherit] overflow-hidden bg-black border border-white/10 z-10">
 
                                 {/* Grain/Texture Overlay - Consistent with Divisions */}
                                 <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
-                                {/* Ambient Glow */}
-                                <div className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-[#f48c21]/15 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
-                                <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-[#f48c21]/10 rounded-full blur-[100px] pointer-events-none mix-blend-screen" />
+                                {/* Ambient Glow - More Subtle */}
+                                <div className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-[#f48c21]/8 rounded-full blur-[150px] pointer-events-none mix-blend-screen" />
+                                <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-[#f48c21]/5 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
 
                                 {/* Dynamic Content */}
                                 <div className="absolute inset-0 p-12 flex flex-col justify-between">
@@ -185,9 +195,6 @@ export function Products() {
                                         </p>
                                     </div>
                                 </div>
-
-                                {/* Timer Progress Bar (Optional Visual Feedback) */}
-                                <div className="absolute bottom-0 left-0 h-1 bg-[#f48c21] transition-all duration-[5000ms] ease-linear w-full opacity-0 group-hover:opacity-100" />
                             </div>
                         </div>
                     </div>
@@ -198,17 +205,17 @@ export function Products() {
                     {products.map((product, i) => {
                         const Icon = product.icon
                         return (
-                            <div key={product.name} className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                            <div key={product.name} className="bg-white/5 rounded-2xl p-8 border border-white/10">
                                 <div className="flex items-start justify-between mb-6">
-                                    <div className="w-12 h-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center shadow-sm">
+                                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shadow-sm">
                                         <Icon className="w-6 h-6 text-[#f48c21]" />
                                     </div>
-                                    <span className="text-4xl font-black text-gray-200">
+                                    <span className="text-4xl font-black text-white/10">
                                         {String(i + 1).padStart(2, '0')}
                                     </span>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{product.name}</h3>
-                                <p className="text-gray-500 mb-4">{product.description}</p>
+                                <h3 className="text-2xl font-bold text-white mb-2">{product.name}</h3>
+                                <p className="text-white/60 mb-4">{product.description}</p>
                                 <span className="text-xs font-bold text-[#f48c21] uppercase tracking-wider">
                                     {product.types}
                                 </span>

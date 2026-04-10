@@ -4,24 +4,24 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
-  --card: #f9f9f9;
-  --card-foreground: #111111;
-  --popover: #ffffff;
-  --popover-foreground: #111111;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #000000;
+  --popover-foreground: #ffffff;
   --primary: #f48c21;
-  --primary-foreground: #ffffff;
+  --primary-foreground: #000000;
   --secondary: #fdce07;
-  --secondary-foreground: #111111;
-  --muted: #f5f5f5;
-  --muted-foreground: #666666;
+  --secondary-foreground: #000000;
+  --muted: #111111;
+  --muted-foreground: #999999;
   --accent: #f48c21;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e5e5e5;
-  --input: #f5f5f5;
+  --border: #222222;
+  --input: #111111;
   --ring: #f48c21;
   --chart-1: #f48c21;
   --chart-2: #fdce07;
@@ -29,13 +29,13 @@
   --chart-4: #f48c21;
   --chart-5: #fdce07;
   --radius: 0.5rem;
-  --sidebar: #f9f9f9;
-  --sidebar-foreground: #111111;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ffffff;
   --sidebar-primary: #f48c21;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f5f5f5;
-  --sidebar-accent-foreground: #111111;
-  --sidebar-border: #e5e5e5;
+  --sidebar-accent: #111111;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #222222;
   --sidebar-ring: #f48c21;
 }
 
