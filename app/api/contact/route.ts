@@ -40,13 +40,24 @@ export async function POST(req: Request) {
     };
 
     // Send the email
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent successfully:", info.messageId);
 
     return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
   } catch (error: any) {
-    console.error("Error sending email:", error);
+    console.error("Detailed SMTP Error:", {
+      message: error.message,
+      code: error.code,
+      command: error.command,
+      response: error.response
+    });
+    
     return NextResponse.json(
-      { message: "Failed to send email", error: error.message },
+      { 
+        message: "Failed to send email", 
+        error: error.message,
+        details: error.code 
+      },
       { status: 500 }
     );
   }
