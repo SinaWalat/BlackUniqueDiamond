@@ -89,7 +89,7 @@ export function Products() {
             {/* Background elements - Clean Black */}
             <div className="absolute top-20 right-20 w-96 h-96 bg-[#f48c21]/2 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
 
                 {/* Header */}
                 <div className={`mb-20 md:mb-32 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>

@@ -49,10 +49,10 @@ export function Contact() {
                 setIsSent(true)
                 setFormData({ name: "", email: "", subject: "", message: "" })
             } else {
-                setErrorMessage(data.message || "Something went wrong. Please try again.")
+                setErrorMessage(data.error || data.message || "Something went wrong. Please try again.")
             }
         } catch (error) {
-            setErrorMessage("Failed to send message. Please check your connection and try again.")
+            setErrorMessage("Failed to connect to the server. Please check your internet connection.")
         } finally {
             setIsSending(false)
         }
@@ -60,7 +60,7 @@ export function Contact() {
 
     return (
         <section ref={sectionRef} id="contact" className="relative py-24 md:py-32 bg-black text-white overflow-hidden">
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
 
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -101,7 +101,7 @@ export function Contact() {
                             <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-white text-sm font-bold uppercase tracking-wider pl-1">Name</label>
+                                        <label className="block mb-3 text-white text-sm font-bold uppercase tracking-wider pl-1">Name</label>
                                         <input
                                             type="text"
                                             required
@@ -112,7 +112,7 @@ export function Contact() {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-white text-sm font-bold uppercase tracking-wider pl-1">Email</label>
+                                        <label className="block mb-3 text-white text-sm font-bold uppercase tracking-wider pl-1">Email</label>
                                         <input
                                             type="email"
                                             required
@@ -125,7 +125,7 @@ export function Contact() {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-white text-sm font-bold uppercase tracking-wider pl-1">Subject</label>
+                                    <label className="block mb-3 text-white text-sm font-bold uppercase tracking-wider pl-1">Subject</label>
                                     <input
                                         type="text"
                                         value={formData.subject}
@@ -136,13 +136,13 @@ export function Contact() {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-white text-sm font-bold uppercase tracking-wider pl-1">Message</label>
+                                    <label className="block mb-3 text-white text-sm font-bold uppercase tracking-wider pl-1">Message</label>
                                     <textarea
                                         rows={4}
                                         required
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#f48c21] transition-colors"
+                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#f48c21] transition-colors resize-none"
                                         placeholder="How can we help you?"
                                     />
                                 </div>

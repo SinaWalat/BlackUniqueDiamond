@@ -47,27 +47,57 @@ export function Header() {
       {/* Full-screen menu overlay — portaled to document.body */}
       {mounted && createPortal(
         <div
-          className={`fixed inset-0 bg-black transition-all duration-500 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
+          className={`fixed inset-0 bg-[#020202] transition-all duration-700 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
           style={{ zIndex: 9998 }}
         >
-          <nav className="flex flex-col items-center justify-center h-full gap-10">
-            {navItems.map((item, i) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="text-4xl font-bold text-white/80 hover:text-[#f48c21] transition-colors duration-300 cursor-pointer"
-                style={{
-                  transform: isOpen ? "translateY(0)" : "translateY(20px)",
-                  opacity: isOpen ? 1 : 0,
-                  transition: `transform 0.4s ease, opacity 0.4s ease, color 0.3s ease`,
-                  transitionDelay: `${i * 80}ms`,
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          {/* Ambient background glow */}
+          <div className="absolute inset-0 opacity-[0.15] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+
+          {/* Nav Container */}
+          <div className="w-full max-w-[1400px] mx-auto px-6 h-full flex flex-col justify-center relative z-10 pt-20">
+            <div className="grid md:grid-cols-2 gap-12 items-center h-full max-h-[800px]">
+              
+              {/* Left Side: Branding / Info (Hidden on mobile) */}
+              <div className="hidden md:flex flex-col justify-between h-full py-10 border-r border-white/10">
+                <div>
+                   <h2 className="text-white/40 text-sm font-bold tracking-[0.3em] uppercase mb-8">Navigation</h2>
+                   <p className="text-white/60 text-2xl leading-relaxed max-w-sm">
+                     Explore our integrated operations, premium fuel variants, and uncompromising commitment to safety.
+                   </p>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-[#f48c21] text-sm font-bold tracking-[0.2em] uppercase">Reach Out</p>
+                  <p className="text-white/80 text-xl font-medium hover:text-white transition-colors cursor-pointer">info@blackuniquediamond.com</p>
+                </div>
+              </div>
+
+              {/* Right Side: Links */}
+              <nav className="flex flex-col justify-center gap-6 md:gap-8 md:pl-16">
+                {navItems.map((item, i) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="group flex items-center gap-6 w-fit"
+                    style={{
+                      transform: isOpen ? "translateX(0)" : "translateX(60px)",
+                      opacity: isOpen ? 1 : 0,
+                      transition: `transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease`,
+                      transitionDelay: `${i * 80 + 100}ms`,
+                    }}
+                  >
+                    <span className="text-white/20 text-xl md:text-2xl font-bold font-mono transition-colors group-hover:text-[#f48c21]">
+                      0{i + 1}
+                    </span>
+                    <span className="text-5xl md:text-7xl lg:text-[6rem] font-black text-white uppercase tracking-tighter transition-all duration-400 group-hover:text-[#f48c21] group-hover:translate-x-6">
+                      {item.label}
+                    </span>
+                  </Link>
+                ))}
+              </nav>
+
+            </div>
+          </div>
         </div>,
         document.body
       )}
@@ -76,7 +106,7 @@ export function Header() {
         className={`fixed top-0 left-0 right-0 py-4 ${scrolled && !isOpen ? "bg-black/80 backdrop-blur-xl border-b border-white/5 transition-all duration-500" : "bg-transparent transition-[background-color,backdrop-filter] duration-500 border-b border-transparent"}`}
         style={{ zIndex: 9999 }}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="w-full max-w-[1400px] mx-auto px-6 flex items-center justify-between">
           <Link
             href="/"
             className={`group flex items-center gap-3 transition-all duration-300 ${isOpen ? "opacity-0 pointer-events-none -translate-x-4" : "opacity-100"}`}

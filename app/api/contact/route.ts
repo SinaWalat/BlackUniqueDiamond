@@ -19,7 +19,7 @@ export async function POST(req: Request) {
 
     // Email content
     const mailOptions = {
-      from: `"${name}" <${process.env.SMTP_USER}>`, // The 'from' address must usually be the authenticated user
+      from: process.env.SMTP_USER, // Simplified from address for Titan compatibility
       to: "info@blackuniquediamond.com",
       replyTo: email,
       subject: subject || `New Contact From: ${name}`,
@@ -51,12 +51,12 @@ export async function POST(req: Request) {
       command: error.command,
       response: error.response
     });
-    
+
     return NextResponse.json(
-      { 
-        message: "Failed to send email", 
+      {
+        message: "Failed to send email",
         error: error.message,
-        details: error.code 
+        details: error.code
       },
       { status: 500 }
     );

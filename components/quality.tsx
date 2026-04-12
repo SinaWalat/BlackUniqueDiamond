@@ -26,7 +26,7 @@ export function Quality() {
 
   return (
     <section ref={sectionRef} id="quality" className="relative py-24 md:py-32 bg-black text-white overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
 
         {/* Header - Consistent with other sections */}
         <div className={`mb-16 text-center max-w-3xl mx-auto transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
@@ -40,101 +40,62 @@ export function Quality() {
         </div>
 
         {/* Symmetrical Dashboard Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
 
-          {/* Card 1: Lab Analysis (Data Focus) */}
-          <div className={`group relative h-[500px] rounded-[2.5rem] bg-black border border-white/10 overflow-hidden transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-            <div className="absolute -top-20 -right-20 w-[300px] h-[300px] bg-[#f48c21]/15 rounded-full blur-[80px] pointer-events-none group-hover:bg-[#f48c21]/25 transition-colors duration-500" />
-
-            <div className="relative h-full p-8 flex flex-col">
-              <div className="w-14 h-14 rounded-2xl bg-[#f48c21] flex items-center justify-center mb-8 shadow-lg shadow-[#f48c21]/20">
-                <Beaker className="w-7 h-7 text-white" />
+          {/* Card 1: Lab Analysis */}
+          <div className={`relative h-[500px] rounded-[2.5rem] bg-[#0a0a0a] border border-white/10 overflow-hidden transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+            <div className="absolute inset-0 opacity-[0.15] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+            <div className="absolute inset-x-0 top-6 bottom-[30%] flex items-center justify-center pointer-events-none px-6 z-0">
+              <img src="/Lab.png" alt="Lab Analysis" className="w-full h-[85%] max-w-[280px] object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]" />
+            </div>
+            <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/95 to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col z-20">
+              <h3 className="text-4xl font-black text-white tracking-tight mb-3">Lab Analysis</h3>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-[2px] w-6 bg-[#f48c21]" />
+                <p className="text-[#f48c21] font-bold text-[10px] tracking-widest uppercase">Real-Time Data</p>
               </div>
-
-              <h3 className="text-3xl font-black text-white mb-2">Lab Analysis</h3>
-              <p className="text-white/40 text-sm mb-8">Real-time quality monitoring parameters.</p>
-
-              <div className="mt-auto space-y-4">
-                {/* Fake Data Bars */}
-                {[
-                  { label: "Sulfur", val: "< 10ppm", width: "10%" },
-                  { label: "Purity", val: "99.9%", width: "99%" },
-                  { label: "Octane", val: "95+", width: "85%" }
-                ].map((item, i) => (
-                  <div key={i} className="group/bar">
-                    <div className="flex justify-between text-xs font-bold text-white/40 mb-2 uppercase tracking-wider">
-                      <span>{item.label}</span>
-                      <span className="text-white">{item.val}</span>
-                    </div>
-                    <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-[#f48c21] rounded-full transition-all duration-1000 ease-out group-hover/bar:bg-white"
-                        style={{ width: isVisible ? item.width : "0%" }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <p className="text-white/40 text-sm leading-relaxed max-w-[95%]">
+                Cutting-edge laboratory monitoring for perfect purity and performance validation parameters.
+              </p>
             </div>
           </div>
 
-          {/* Card 2: Certifications (Badge Focus) */}
-          <div className={`group relative h-[500px] rounded-[2.5rem] bg-black border border-white/10 overflow-hidden transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-
-            {/* Center Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-[#f48c21]/10 rounded-full blur-[60px] group-hover:bg-[#f48c21]/20 transition-colors duration-500" />
-
-            <div className="relative h-full p-8 flex flex-col items-center text-center">
-              <div className="mt-8 mb-8 relative">
-                {/* Animated Rings */}
-                <div className="absolute inset-0 border border-[#f48c21]/30 rounded-full animate-[spin_10s_linear_infinite]" />
-                <div className="absolute inset-[-10px] border border-white/5 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
-
-                <div className="w-24 h-24 rounded-full bg-[#f48c21] flex items-center justify-center shadow-[0_0_40px_rgba(244,140,33,0.4)]">
-                  <Award className="w-10 h-10 text-white" />
-                </div>
+          {/* Card 2: Certifications */}
+          <div className={`relative h-[500px] rounded-[2.5rem] bg-[#0a0a0a] border border-white/10 overflow-hidden transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+            <div className="absolute inset-0 opacity-[0.15] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+            <div className="absolute inset-x-0 top-6 bottom-[30%] flex items-center justify-center pointer-events-none px-6 z-0">
+              <img src="/ISO.png" alt="ISO Certification" className="w-full h-[85%] max-w-[280px] object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]" />
+            </div>
+            <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/95 to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col z-20">
+              <h3 className="text-4xl font-black text-white tracking-tight mb-3">ISO 9001</h3>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-[2px] w-6 bg-[#f48c21]" />
+                <p className="text-[#f48c21] font-bold text-[10px] tracking-widest uppercase">Certified Excellence</p>
               </div>
-
-              <h3 className="text-3xl font-black text-white mb-2">ISO 9001</h3>
-              <p className="text-[#f48c21] font-bold text-sm tracking-widest uppercase mb-8">Certified Excellence</p>
-
-              <div className="mt-auto grid grid-cols-2 gap-3 w-full">
-                {['ISO 14001', 'ISO 45001'].map((iso) => (
-                  <div key={iso} className="p-3 rounded-xl bg-white/5 border border-white/10 text-white/60 font-bold text-sm hover:border-[#f48c21]/50 hover:bg-white/10 transition-all duration-300 cursor-default">
-                    {iso}
-                  </div>
-                ))}
-              </div>
+              <p className="text-white/40 text-sm leading-relaxed max-w-[95%]">
+                Operating with globally recognized systems, fully integrated with <span className="text-white font-bold">ISO 14001</span> (Environment) and <span className="text-white font-bold">ISO 45001</span> (Safety) to ensure premium delivery.
+              </p>
             </div>
           </div>
 
-          {/* Card 3: HSE (Icon Focus) */}
-          <div className={`group relative h-[500px] rounded-[2.5rem] bg-black border border-white/10 overflow-hidden transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-            <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] bg-[#f48c21]/15 rounded-full blur-[80px] pointer-events-none group-hover:bg-[#f48c21]/25 transition-colors duration-500" />
-
-            <div className="relative h-full p-8 flex flex-col">
-              <div className="w-14 h-14 rounded-2xl bg-[#f48c21] flex items-center justify-center mb-8 shadow-lg shadow-[#f48c21]/20">
-                <ShieldCheck className="w-7 h-7 text-white" />
+          {/* Card 3: Safety First */}
+          <div className={`relative h-[500px] rounded-[2.5rem] bg-[#0a0a0a] border border-white/10 overflow-hidden transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+            <div className="absolute inset-0 opacity-[0.15] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+            <div className="absolute inset-x-0 top-6 bottom-[30%] flex items-center justify-center pointer-events-none px-6 z-0">
+              <img src="/Safety.png" alt="Safety First" className="w-full h-[85%] max-w-[280px] object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]" />
+            </div>
+            <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/95 to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col z-20">
+              <h3 className="text-4xl font-black text-white tracking-tight mb-3">Safety First</h3>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-[2px] w-6 bg-[#f48c21]" />
+                <p className="text-[#f48c21] font-bold text-[10px] tracking-widest uppercase">HSE Management</p>
               </div>
-
-              <h3 className="text-3xl font-black text-white mb-2">Safety First</h3>
-              <p className="text-white/40 text-sm mb-8">Comprehensive HSE management systems.</p>
-
-              <div className="mt-auto space-y-4">
-                {[
-                  { icon: Activity, text: "24/7 Monitoring" },
-                  { icon: Leaf, text: "Zero Emissions Goal" },
-                  { icon: CheckCircle, text: "Full Compliance" }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#f48c21]/50 hover:bg-white/10 transition-all duration-300 cursor-default">
-                    <item.icon className="w-5 h-5 text-[#f48c21]" />
-                    <span className="text-white/80 font-medium">{item.text}</span>
-                  </div>
-                ))}
-              </div>
+              <p className="text-white/40 text-sm leading-relaxed max-w-[95%]">
+                Comprehensive safety tracking and full compliance protocols implemented globally.
+              </p>
             </div>
           </div>
 

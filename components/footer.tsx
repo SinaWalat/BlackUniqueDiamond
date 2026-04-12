@@ -15,7 +15,7 @@ export function Footer() {
       {/* Top subtle glow line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 max-w-4xl h-px bg-gradient-to-r from-transparent via-[#f48c21] to-transparent opacity-40" />
 
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-[1400px] mx-auto px-6">
         
         {/* Main Footer Content */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 pb-10 border-b border-white/5">

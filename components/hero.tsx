@@ -34,7 +34,7 @@ export function Hero() {
 
 
 
-      <div className="container mx-auto px-6 relative z-10 pt-32 pb-20">
+      <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10 pt-32 pb-20">
         <div className="max-w-4xl">
           {/* Badge */}
           <div
