@@ -18,8 +18,8 @@ export default function QualityPage() {
             <Header />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-                <div className="container mx-auto px-6 relative z-10">
+            <section className="relative pt-48 pb-8 md:pt-64 md:pb-16 overflow-hidden">
+                <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
                     <div className={`max-w-4xl transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-12 h-0.5 bg-[#f48c21]" />
@@ -38,7 +38,7 @@ export default function QualityPage() {
 
             {/* Standards Section */}
             <section className="pb-32">
-                <div className="container mx-auto px-6">
+                <div className="w-full max-w-[1400px] mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-16 mb-32 items-center">
                         <div className="p-10 rounded-[3rem] bg-[#0a0a0a] border border-white/10 relative overflow-hidden group">
                             <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">

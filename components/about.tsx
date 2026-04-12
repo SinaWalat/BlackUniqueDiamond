@@ -133,7 +133,7 @@ export function About() {
             <div className="relative h-full flex flex-col justify-between p-10 md:p-12 bg-black/90 border border-white/10 rounded-[inherit] overflow-hidden z-20">
               
               {/* Massive 3D Background Embedded */}
-              <div className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 w-64 h-64 md:w-[350px] md:h-[350px] opacity-10 md:opacity-20 group-hover:opacity-100 group-hover:scale-105 pointer-events-none transition-all duration-700 z-0">
+              <div className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 w-64 h-64 md:w-[350px] md:h-[350px] opacity-10 md:opacity-20 group-hover:opacity-100 pointer-events-none transition-all duration-700 z-0">
                 <img src="/Vision.png" alt="Vision" className="w-full h-full object-contain filter drop-shadow-[0_0_40px_rgba(244,140,33,0.15)]" />
               </div>
 
@@ -171,7 +171,7 @@ export function About() {
             <div className="relative h-full flex flex-col justify-between p-10 md:p-12 bg-black/90 border border-white/10 rounded-[inherit] overflow-hidden z-20">
               
               {/* Massive 3D Background Embedded */}
-              <div className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 w-64 h-64 md:w-[350px] md:h-[350px] opacity-10 md:opacity-20 group-hover:opacity-100 group-hover:scale-105 pointer-events-none transition-all duration-700 z-0">
+              <div className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 w-64 h-64 md:w-[350px] md:h-[350px] opacity-10 md:opacity-20 group-hover:opacity-100 pointer-events-none transition-all duration-700 z-0">
                 <img src="/Mission.png" alt="Mission" className="w-full h-full object-contain filter drop-shadow-[0_0_40px_rgba(244,140,33,0.15)]" />
               </div>
 

@@ -19,18 +19,10 @@ export default function AboutPage() {
             <Header />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="/images/Cover.jpeg"
-                        alt="Refinery background"
-                        fill
-                        className="object-cover opacity-20 blur-sm"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
-                </div>
+            <section className="relative pt-48 pb-8 md:pt-64 md:pb-16 overflow-hidden">
 
-                <div className="container mx-auto px-6 relative z-10">
+
+                <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
                     <div className={`max-w-4xl transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-12 h-0.5 bg-[#f48c21]" />
@@ -46,7 +38,7 @@ export default function AboutPage() {
 
             {/* Corporate Overview with Image */}
             <section className="pb-32">
-                <div className="container mx-auto px-6">
+                <div className="w-full max-w-[1400px] mx-auto px-6">
                     <div className={`grid lg:grid-cols-2 gap-16 mb-32 items-center transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                         <div className="space-y-8">
                             <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed border-l-2 border-[#f48c21]/30 pl-8">
@@ -56,21 +48,22 @@ export default function AboutPage() {
                                 By combining production capabilities with advanced logistics infrastructure and in-house research and development expertise, Black Unique Diamond delivers reliable, scalable, and quality-driven solutions to multinational companies, refineries, traders, and governmental entities.
                             </p>
                         </div>
-                        <div className="relative h-[500px] rounded-[3rem] overflow-hidden border border-white/10 group">
+                        <div className="relative h-[500px] rounded-[3rem] overflow-hidden border border-white/10">
                             <Image
                                 src="/images/Cover.jpeg"
                                 alt="Operational assets"
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                className="object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#f48c21]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#f48c21]/20 to-transparent opacity-100" />
                         </div>
                     </div>
 
                     {/* Mission & Vision */}
                     <div className="grid md:grid-cols-2 gap-8 mb-32">
+
                         {/* Vision Card */}
-                        <div className={`group relative rounded-[2.5rem] min-h-[380px] md:min-h-[440px] flex flex-col justify-between transition-all duration-1000 delay-300 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+                        <div className={`group relative rounded-[2.5rem] min-h-[380px] md:min-h-[440px] flex flex-col justify-between transition-all duration-1000 delay-300 cursor-pointer z-10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
                             <GlowingEffect
                                 spread={40}
                                 glow={true}
@@ -80,10 +73,17 @@ export default function AboutPage() {
                                 borderWidth={3}
                                 variant="orange"
                             />
-                            <div className="relative h-full flex flex-col justify-between p-10 md:p-12 bg-black border border-white/10 rounded-[inherit] overflow-hidden z-10">
-                                <div className={`absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-[#f48c21]/8 to-transparent rounded-full blur-3xl transition-opacity duration-1000 delay-700 ${isVisible ? "opacity-60" : "opacity-0"}`} />
+                            <div className="relative h-full flex flex-col justify-between p-10 md:p-12 bg-black/90 border border-white/10 rounded-[inherit] overflow-hidden z-20">
+                                
+                                {/* Massive 3D Background Embedded */}
+                                <div className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 w-64 h-64 md:w-[350px] md:h-[350px] opacity-10 md:opacity-20 group-hover:opacity-100 pointer-events-none transition-all duration-700 z-0">
+                                    <img src="/Vision.png" alt="Vision" className="w-full h-full object-contain filter drop-shadow-[0_0_40px_rgba(244,140,33,0.15)]" />
+                                </div>
 
-                                <div className="relative z-10 flex flex-col justify-between h-full text-left">
+                                {/* Subtle warm glow - Animates in when visible */}
+                                <div className={`absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-[#f48c21]/8 to-transparent rounded-full blur-3xl transition-opacity duration-1000 delay-700 pointer-events-none z-0 ${isVisible ? "opacity-60" : "opacity-0"}`} />
+
+                                <div className="relative z-10 flex flex-col justify-between h-full">
                                     <div>
                                         <h3 className={`text-4xl md:text-5xl font-black leading-tight mb-5 transition-transform duration-1000 delay-500 ${isVisible ? "translate-y-0" : "translate-y-4"}`}>
                                             <span className="bg-gradient-to-r from-[#f48c21] to-[#fdce07] bg-clip-text text-transparent">Vision</span>
@@ -94,17 +94,14 @@ export default function AboutPage() {
                                     </div>
 
                                     <div className="flex items-end justify-between mt-10">
-                                        <span className={`text-white/40 text-sm transition-opacity duration-1000 delay-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}>Black Unique — Product Philosophy</span>
-                                        <div className={`w-12 h-12 rounded-full border border-white/10 flex items-center justify-center transition-all duration-1000 delay-[1200ms] ${isVisible ? "scale-100 opacity-100" : "scale-50 opacity-0"}`}>
-                                            <Eye className="w-5 h-5 text-[#f48c21]" />
-                                        </div>
+                                        <span className={`text-white/60 text-sm transition-opacity duration-1000 delay-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}>Black Unique — Product Philosophy</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Mission Card */}
-                        <div className={`group relative rounded-[2.5rem] min-h-[380px] md:min-h-[440px] flex flex-col justify-between transition-all duration-1000 delay-500 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+                        <div className={`group relative rounded-[2.5rem] min-h-[380px] md:min-h-[440px] flex flex-col justify-between transition-all duration-1000 delay-500 cursor-pointer z-10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
                             <GlowingEffect
                                 spread={40}
                                 glow={true}
@@ -114,10 +111,17 @@ export default function AboutPage() {
                                 borderWidth={3}
                                 variant="orange"
                             />
-                            <div className="relative h-full flex flex-col justify-between p-10 md:p-12 bg-black border border-white/10 rounded-[inherit] overflow-hidden z-10">
-                                <div className={`absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-[#f48c21]/8 to-transparent rounded-full blur-3xl transition-opacity duration-1000 delay-1000 ${isVisible ? "opacity-60" : "opacity-0"}`} />
+                            <div className="relative h-full flex flex-col justify-between p-10 md:p-12 bg-black/90 border border-white/10 rounded-[inherit] overflow-hidden z-20">
+                                
+                                {/* Massive 3D Background Embedded */}
+                                <div className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 w-64 h-64 md:w-[350px] md:h-[350px] opacity-10 md:opacity-20 group-hover:opacity-100 pointer-events-none transition-all duration-700 z-0">
+                                    <img src="/Mission.png" alt="Mission" className="w-full h-full object-contain filter drop-shadow-[0_0_40px_rgba(244,140,33,0.15)]" />
+                                </div>
 
-                                <div className="relative z-10 flex flex-col justify-between h-full text-left">
+                                {/* Subtle ambient glow - Animates in when visible */}
+                                <div className={`absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-[#f48c21]/8 to-transparent rounded-full blur-3xl transition-opacity duration-1000 delay-1000 pointer-events-none z-0 ${isVisible ? "opacity-60" : "opacity-0"}`} />
+
+                                <div className="relative z-10 flex flex-col justify-between h-full">
                                     <div>
                                         <h3 className={`text-4xl md:text-5xl font-black leading-tight mb-5 transition-transform duration-1000 delay-700 ${isVisible ? "translate-y-0" : "translate-y-4"}`}>
                                             <span className="bg-gradient-to-r from-[#f48c21] to-[#fdce07] bg-clip-text text-transparent">Mission</span>
@@ -129,13 +133,11 @@ export default function AboutPage() {
 
                                     <div className="flex items-end justify-between mt-10">
                                         <span className={`text-white/40 text-sm font-semibold tracking-wide transition-opacity duration-1000 delay-[1200ms] ${isVisible ? "opacity-100" : "opacity-0"}`}>Quality. Innovation. Integrity.</span>
-                                        <div className={`w-12 h-12 rounded-full border border-white/10 flex items-center justify-center transition-all duration-1000 delay-[1400ms] ${isVisible ? "scale-100 opacity-100" : "scale-50 opacity-0"}`}>
-                                            <Target className="w-5 h-5 text-[#f48c21]" />
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     {/* Advantages & Strengths */}
