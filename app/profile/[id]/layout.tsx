@@ -6,7 +6,8 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const employee = employees[params.id];
+  const { id } = await params;
+  const employee = employees[id];
 
   if (!employee) {
     return {

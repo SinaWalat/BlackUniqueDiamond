@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useParams, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import { employees } from "@/lib/employees";
 import { 
   MessageCircle, 
@@ -16,9 +16,8 @@ import {
   Check
 } from "lucide-react";
 
-export default function EmployeeProfilePage() {
-  const params = useParams();
-  const id = params.id as string;
+export default function EmployeeProfilePage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = React.use(params);
   const employee = employees[id];
 
   const [mounted, setMounted] = useState(false);
