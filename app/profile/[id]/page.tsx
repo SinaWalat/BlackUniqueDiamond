@@ -18,7 +18,11 @@ import {
 
 export default function EmployeeProfilePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = React.use(params);
-  const employee = employees[id];
+  
+  // Case-insensitive lookup
+  const employee = Object.values(employees).find(
+    (e) => e.id.toLowerCase() === id.toLowerCase()
+  );
 
   const [mounted, setMounted] = useState(false);
   const [copied, setCopied] = useState(false);

@@ -7,7 +7,11 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  const employee = employees[id];
+  
+  // Case-insensitive lookup
+  const employee = Object.values(employees).find(
+    (e) => e.id.toLowerCase() === id.toLowerCase()
+  );
 
   if (!employee) {
     return {
