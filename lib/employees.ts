@@ -33,7 +33,7 @@ export const employees: Record<string, Employee> = {
   MahmoudYoussef: {
     id: "MahmoudYoussef",
     name: "Mahmoud Youssef Mahmoud",
-    title: "Deputy CEO",
+    title: "Board Member and Deputy CEO",
     phone: "+964 750 450 9292",
     whatsapp: "+9647504509292",
     email: "MahmoudYoussef@Blackuniquediamond.com",
